@@ -1,5 +1,4 @@
 # final-project-cgs-team
-final-project-cgs-team created by GitHub Classroom
 
 Hilmy Hanif Ibrahim - 05111942000005
 
