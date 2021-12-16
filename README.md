@@ -13,5 +13,4 @@ Ascarya Arkaandhiyaa Allaam – 05111942000027
 Nadhif Bhagawanta Hadiprayitno – 05111942000029
 
 
-
 # 3D Interior Design using Minecraft Blocks
