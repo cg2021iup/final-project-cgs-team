@@ -63,7 +63,8 @@
 				addBookshelf: addBookshelf, 
 				addFurnace: addFurnace,
 				addCartographyTable: addCartographyTable, 
-				addBarrel: addBarrel, 
+				addBarrel: addBarrel,
+				addLoom: addLoom,
 			};
 
 			init();
@@ -128,6 +129,7 @@
 				gui.add( params, 'addFurnace');
 				gui.add( params, 'addCartographyTable');
 				gui.add( params, 'addBarrel');
+				gui.add( params, 'addLoom');
 				gui.open();
 
 				// Controls
@@ -1559,7 +1561,35 @@
 				render();
 			}
 
+			function addLoom() {
 			
+				const loomGeometry = new THREE.BoxGeometry( 100, 100, 100 );
+				splinePointsLength ++;
+
+				var loomLoader = new THREE.TextureLoader();
+				var loomTexture = [
+				'textures/loomFront.png',			//front
+				'textures/loomSide.png',			//back
+				'textures/loomTop.png',				//top
+				'textures/loomBottom.png',			//bottom
+				'textures/loomSide.png',			//left
+				'textures/loomSide.png'				//right
+				].map(pic => {
+				return new THREE.MeshLambertMaterial({map: loomLoader.load(pic)});
+			  	} );
+				
+				const loom = new THREE.Mesh( loomGeometry, loomTexture );
+				loom.position.x = Math.random() * 1000 - 500;
+				loom.position.y = Math.random() * 600;
+				loom.position.z = Math.random() * 800 - 400;
+				loom.castShadow = true;
+				loom.receiveShadow = true;
+				scene.add( loom );
+				splineHelperObjects.push( loom );
+				loom.rotateY( - Math.PI / 2 );
+
+				render();
+			}
 
 			function removePoint() {
 
