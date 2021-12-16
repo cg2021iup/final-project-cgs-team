@@ -318,12 +318,12 @@
 
 				var craftingTableLoader = new THREE.TextureLoader();
 				var craftingTableTexture = [
-				'textures/craftingTableFrontBack.png',
-				'textures/craftingTableSide.png',
-				'textures/craftingTableTop.png',
-				'textures/craftingTableBot.png',
-				'textures/craftingTableFrontBack.png',
-				'textures/craftingTableSide.png'
+				'textures/craftingTableFrontBack.png', 	//front
+				'textures/craftingTableSide.png',		
+				'textures/craftingTableTop.png',		
+				'textures/craftingTableBot.png',		
+				'textures/craftingTableFrontBack.png',	
+				'textures/craftingTableSide.png'		
 				].map(pic => {
 				return new THREE.MeshLambertMaterial({map: craftingTableLoader.load(pic)});
 			  	} );
@@ -337,6 +337,30 @@
 				craftingTable.receiveShadow = true;
 				scene.add( craftingTable );
 				splineHelperObjects.push( craftingTable );
+				
+				//cartographyTable
+				const cartographyTableGeometry = new THREE.BoxGeometry( 100, 100, 100 );
+				splinePointsLength ++;
+
+				var cartographyTableLoader = new THREE.TextureLoader();
+				var cartographyTableTexture = [
+				'textures/cartographyTableFront.png',	//front
+				'textures/cartographyTableSide.png',	//right
+				'textures/cartographyTableTop.png',		//top
+				'textures/cartographyTableSide.png',	//bottom
+				'textures/cartographyTableLeft.png',	//left
+				'textures/cartographyTableSide.png'		//back
+				].map(pic => {
+				return new THREE.MeshLambertMaterial({map: cartographyTableLoader.load(pic)});
+			  	} );
+				const cartographyTable = new THREE.Mesh( cartographyTableGeometry, cartographyTableTexture );
+				cartographyTable.position.x = 0;
+				cartographyTable.position.y = 100;
+				cartographyTable.position.z = -400;
+				cartographyTable.castShadow = true;
+				cartographyTable.receiveShadow = true;
+				scene.add( cartographyTable );
+				splineHelperObjects.push( cartographyTable );
 
 				//woodenLog
 				const woodenLogGeometry = new THREE.BoxGeometry( 100, 100, 100 );
@@ -352,8 +376,7 @@
 				'textures/woodenLogSide.png'
 				].map(pic => {
 				return new THREE.MeshLambertMaterial({map: woodenLogLoader.load(pic)});
-			  	} );
-				//
+			  	} );	
 				
 				//woodenLogs (copy)
 				const woodenLog = new THREE.Mesh( woodenLogGeometry, woodenLogTexture );
