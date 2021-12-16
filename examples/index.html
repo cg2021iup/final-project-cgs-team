@@ -61,6 +61,11 @@
 				addWoodenLog: addWoodenLog,
 				addGlass: addGlass,
 				addCraftingTable: addCraftingTable,
+				addChest: addChest,
+				addBookshelf: addBookshelf, 
+				addFurnace: addFurnace,
+				addCartographyTable: addCartographyTable, 
+				addBarrel: addBarrel, 
 			};
 
 			init();
@@ -119,7 +124,12 @@
 				gui.add( params, 'addWoodenPlank');
 				gui.add( params, 'addWoodenLog');
 				gui.add( params, 'addGlass');
-				gui.add( params, 'addCraftingTable')
+				gui.add( params, 'addCraftingTable');
+				gui.add( params, 'addChest');
+				gui.add( params, 'addBookshelf');
+				gui.add( params, 'addFurnace');
+				gui.add( params, 'addCartographyTable');
+				gui.add( params, 'addBarrel');
 				gui.open();
 
 				// Controls
@@ -1390,9 +1400,168 @@
 				splineHelperObjects.push( craftingTable );
 
 				render();
-
 			}
 
+
+/*  copy this
+			
+			function addChest() {
+				craftingTable.position.x = Math.random() * 1000 - 500;
+				craftingTable.position.y = Math.random() * 600;
+				craftingTable.position.z = Math.random() * 800 - 400;
+				
+				render();
+			}
+*/
+
+
+			function addChest() {
+				
+				const chestGeometry = new THREE.BoxGeometry( 100, 100, 100 );
+				splinePointsLength ++;
+
+				var chestLoader = new THREE.TextureLoader();
+				var chestTexture = [
+				'textures/chestFront.png',
+				'textures/chestSide.png',
+				'textures/chestTopBot.png',
+				'textures/chestTopBot.png',
+				'textures/chestSide.png',
+				'textures/chestSide.png'
+				].map(pic => {
+				return new THREE.MeshLambertMaterial({map: chestLoader.load(pic)});
+			  	} );
+				const chest = new THREE.Mesh( chestGeometry, chestTexture );
+				chest.position.x = Math.random() * 1000 - 500;
+				chest.position.y = Math.random() * 600;
+				chest.position.z = Math.random() * 800 - 400;
+				chest.castShadow = true;
+				chest.receiveShadow = true;
+				scene.add( chest );
+				splineHelperObjects.push( chest );
+				render();
+			}
+
+			function addBookshelf() {
+				
+
+				const bookshelfGeometry = new THREE.BoxGeometry( 100, 100, 100 );
+				splinePointsLength ++;
+
+				var bookshelfLoader = new THREE.TextureLoader();
+				var bookshelfTexture = [
+				'textures/bookshelfSide.png',
+				'textures/bookshelfSide.png',
+				'textures/bookshelfTopBot.png',
+				'textures/bookshelfTopBot.png',
+				'textures/bookshelfSide.png',
+				'textures/bookshelfSide.png'
+				].map(pic => {
+				return new THREE.MeshLambertMaterial({map: bookshelfLoader.load(pic)});
+			  	} );
+				const bookshelf = new THREE.Mesh( bookshelfGeometry, bookshelfTexture );
+				bookshelf.position.x = Math.random() * 1000 - 500;
+				bookshelf.position.y = Math.random() * 600;
+				bookshelf.position.z = Math.random() * 800 - 400;
+				bookshelf.castShadow = true;
+				bookshelf.receiveShadow = true;
+				scene.add( bookshelf );
+				splineHelperObjects.push( bookshelf );
+				
+				render();
+			}
+
+			function addFurnace() {
+				
+
+				const furnaceGeometry = new THREE.BoxGeometry( 100, 100, 100 );
+				splinePointsLength ++;
+
+				var furnaceLoader = new THREE.TextureLoader();
+				var furnaceTexture = [
+				'textures/furnaceFront.png',
+				'textures/furnaceSide.png',
+				'textures/furnaceTopBot.png',
+				'textures/furnaceTopBot.png',
+				'textures/furnaceSide.png',
+				'textures/furnaceSide.png'
+				].map(pic => {
+				return new THREE.MeshLambertMaterial({map: furnaceLoader.load(pic)});
+			  	} );
+				const furnace = new THREE.Mesh( furnaceGeometry, furnaceTexture );
+				furnace.position.x = Math.random() * 1000 - 500;
+				furnace.position.y = Math.random() * 600;
+				furnace.position.z = Math.random() * 800 - 400;
+				furnace.castShadow = true;
+				furnace.receiveShadow = true;
+				scene.add( furnace );
+				splineHelperObjects.push( furnace );
+
+
+				
+				render();
+			}
+
+			function addCartographyTable() {
+				
+
+				const cartographyTableGeometry = new THREE.BoxGeometry( 100, 100, 100 );
+				splinePointsLength ++;
+
+				var cartographyTableLoader = new THREE.TextureLoader();
+				var cartographyTableTexture = [
+				'textures/cartographyTableFront.png',		
+				'textures/cartographyTableSide.png',		
+				'textures/cartographyTableTop.png',			
+				'textures/cartographyTableSide.png',		
+				'textures/cartographyTableLeft.png',		
+				'textures/cartographyTableSide.png'			
+				].map(pic => {
+				return new THREE.MeshLambertMaterial({map: cartographyTableLoader.load(pic)});
+			  	} );
+				const cartographyTable = new THREE.Mesh( cartographyTableGeometry, cartographyTableTexture );
+				cartographyTable.position.x = Math.random() * 1000 - 500;
+				cartographyTable.position.y = Math.random() * 600;
+				cartographyTable.position.z = Math.random() * 800 - 400;
+				cartographyTable.castShadow = true;
+				cartographyTable.receiveShadow = true;
+				scene.add( cartographyTable );
+				splineHelperObjects.push( cartographyTable );
+				
+				render();
+			}
+
+			function addBarrel() {
+		
+				
+				const barrelGeometry = new THREE.BoxGeometry( 100, 100, 100 );
+				splinePointsLength ++;
+
+				var barrelLoader = new THREE.TextureLoader();
+				var barrelTexture = [
+				'textures/barrelFront.png',			//front
+				'textures/barrelBack.png',			//back
+				'textures/barrelSide.png',			//top
+				'textures/barrelSide.png',			//bottom
+				'textures/barrelSide.png',			//left
+				'textures/barrelSide.png'			//right
+				].map(pic => {
+				return new THREE.MeshLambertMaterial({map: barrelLoader.load(pic)});
+			  	} );
+				
+				const barrel = new THREE.Mesh( barrelGeometry, barrelTexture );
+				barrel.position.x = Math.random() * 1000 - 500;
+				barrel.position.y = Math.random() * 600;
+				barrel.position.z = Math.random() * 800 - 400;
+				barrel.castShadow = true;
+				barrel.receiveShadow = true;
+				scene.add( barrel );
+				splineHelperObjects.push( barrel );
+
+				render();
+			}
+
+			
 
 			function removePoint() {
 
