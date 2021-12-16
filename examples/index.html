@@ -279,6 +279,7 @@
 				].map(pic => {
 				return new THREE.MeshLambertMaterial({map: craftingTableLoader.load(pic)});
 			  	} );
+				  
 				//craftingTable (copy)
 				const craftingTable = new THREE.Mesh( craftingTableGeometry, craftingTableTexture );
 				craftingTable.position.x = 100;
