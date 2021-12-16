@@ -243,6 +243,30 @@
 				scene.add( chest );
 				splineHelperObjects.push( chest );
 
+				//bookshelf
+				const bookshelfGeometry = new THREE.BoxGeometry( 100, 100, 100 );
+				splinePointsLength ++;
+
+				var bookshelfLoader = new THREE.TextureLoader();
+				var bookshelfTexture = [
+				'textures/bookshelfSide.png',
+				'textures/bookshelfSide.png',
+				'textures/bookshelfTopBot.png',
+				'textures/bookshelfTopBot.png',
+				'textures/bookshelfSide.png',
+				'textures/bookshelfSide.png'
+				].map(pic => {
+				return new THREE.MeshLambertMaterial({map: bookshelfLoader.load(pic)});
+			  	} );
+				const bookshelf = new THREE.Mesh( bookshelfGeometry, bookshelfTexture );
+				bookshelf.position.x = -100;
+				bookshelf.position.y = 200;
+				bookshelf.position.z = -400;
+				bookshelf.castShadow = true;
+				bookshelf.receiveShadow = true;
+				scene.add( bookshelf );
+				splineHelperObjects.push( bookshelf );
+
 				//furnace
 				const furnaceGeometry = new THREE.BoxGeometry( 100, 100, 100 );
 				splinePointsLength ++;
@@ -273,16 +297,16 @@
 
 				var craftingTableLoader = new THREE.TextureLoader();
 				var craftingTableTexture = [
-				'textures/craftingTableFrontBack.png',
-				'textures/craftingTableSide.png',
-				'textures/craftingTableTop.png',
-				'textures/craftingTableBot.png',
-				'textures/craftingTableFrontBack.png',
-				'textures/craftingTableSide.png'
+				'textures/craftingTableFrontBack.png', 	
+				'textures/craftingTableSide.png',		
+				'textures/craftingTableTop.png',		
+				'textures/craftingTableBot.png',		
+				'textures/craftingTableFrontBack.png',	
+				'textures/craftingTableSide.png'		
 				].map(pic => {
 				return new THREE.MeshLambertMaterial({map: craftingTableLoader.load(pic)});
 			  	} );
-				  
+				
 				//craftingTable (copy)
 				const craftingTable = new THREE.Mesh( craftingTableGeometry, craftingTableTexture );
 				craftingTable.position.x = -100;
@@ -292,7 +316,92 @@
 				craftingTable.receiveShadow = true;
 				scene.add( craftingTable );
 				splineHelperObjects.push( craftingTable );
-				//
+				
+				//cartographyTable
+				const cartographyTableGeometry = new THREE.BoxGeometry( 100, 100, 100 );
+				splinePointsLength ++;
+
+				var cartographyTableLoader = new THREE.TextureLoader();
+				var cartographyTableTexture = [
+				'textures/cartographyTableFront.png',		
+				'textures/cartographyTableSide.png',		
+				'textures/cartographyTableTop.png',			
+				'textures/cartographyTableSide.png',		
+				'textures/cartographyTableLeft.png',		
+				'textures/cartographyTableSide.png'			
+				].map(pic => {
+				return new THREE.MeshLambertMaterial({map: cartographyTableLoader.load(pic)});
+			  	} );
+				const cartographyTable = new THREE.Mesh( cartographyTableGeometry, cartographyTableTexture );
+				cartographyTable.position.x = 0;
+				cartographyTable.position.y = 100;
+				cartographyTable.position.z = -400;
+				cartographyTable.castShadow = true;
+				cartographyTable.receiveShadow = true;
+				scene.add( cartographyTable );
+				splineHelperObjects.push( cartographyTable );
+
+				//barrel
+				const barrelGeometry = new THREE.BoxGeometry( 100, 100, 100 );
+				splinePointsLength ++;
+
+				var barrelLoader = new THREE.TextureLoader();
+				var barrelTexture = [
+				'textures/barrelFront.png',			//front
+				'textures/barrelBack.png',			//back
+				'textures/barrelSide.png',			//top
+				'textures/barrelSide.png',			//bottom
+				'textures/barrelSide.png',			//left
+				'textures/barrelSide.png'			//right
+				].map(pic => {
+				return new THREE.MeshLambertMaterial({map: barrelLoader.load(pic)});
+			  	} );
+				
+				const barrel = new THREE.Mesh( barrelGeometry, barrelTexture );
+				barrel.position.x = 200;
+				barrel.position.y = 100;
+				barrel.position.z = -400;
+				barrel.castShadow = true;
+				barrel.receiveShadow = true;
+				scene.add( barrel );
+				splineHelperObjects.push( barrel );
+				barrel.rotateY( - Math.PI / 2 );
+
+				const barrel2 = new THREE.Mesh( barrelGeometry, barrelTexture );
+				barrel2.position.x = 200;
+				barrel2.position.y = 200;
+				barrel2.position.z = -400;
+				barrel2.castShadow = true;
+				barrel2.receiveShadow = true;
+				scene.add( barrel2 );
+				splineHelperObjects.push( barrel2 );
+				barrel2.rotateY( - Math.PI / 2 );
+				
+				//loom
+				const loomGeometry = new THREE.BoxGeometry( 100, 100, 100 );
+				splinePointsLength ++;
+
+				var loomLoader = new THREE.TextureLoader();
+				var loomTexture = [
+				'textures/loomFront.png',			//front
+				'textures/loomSide.png',			//back
+				'textures/loomTop.png',				//top
+				'textures/loomBottom.png',			//bottom
+				'textures/loomSide.png',			//left
+				'textures/loomSide.png'				//right
+				].map(pic => {
+				return new THREE.MeshLambertMaterial({map: loomLoader.load(pic)});
+			  	} );
+				
+				const loom = new THREE.Mesh( loomGeometry, loomTexture );
+				loom.position.x = 100;
+				loom.position.y = 100;
+				loom.position.z = -400;
+				loom.castShadow = true;
+				loom.receiveShadow = true;
+				scene.add( loom );
+				splineHelperObjects.push( loom );
+				loom.rotateY( - Math.PI / 2 );
 
 				//woodenLog
 				const woodenLogGeometry = new THREE.BoxGeometry( 100, 100, 100 );
@@ -308,8 +417,7 @@
 				'textures/woodenLogSide.png'
 				].map(pic => {
 				return new THREE.MeshLambertMaterial({map: woodenLogLoader.load(pic)});
-			  	} );
-				//
+			  	} );	
 				
 				//woodenLogs (copy)
 				const woodenLog = new THREE.Mesh( woodenLogGeometry, woodenLogTexture );
@@ -1140,6 +1248,16 @@
 				woodenPlank45.receiveShadow = true;
 				scene.add( woodenPlank45 );
 				splineHelperObjects.push( woodenPlank45 );
+				
+				splinePointsLength ++;
+				const woodenPlank46 = new THREE.Mesh( woodenPlankGeometry, woodenPlankMaterial );
+				woodenPlank46.position.x = -100;
+				woodenPlank46.position.y = 100;
+				woodenPlank46.position.z = -400;
+				woodenPlank46.castShadow = true;
+				woodenPlank46.receiveShadow = true;
+				scene.add( woodenPlank46 );
+				splineHelperObjects.push( woodenPlank46 );
 
 				render();
 
