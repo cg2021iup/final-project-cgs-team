@@ -15,7 +15,7 @@ Nadhif Bhagawanta Hadiprayitno – 05111942000029
 
 # 3D Interior Design using Minecraft Blocks 
 
-
+Our project is that the user or anyone that uses this project will be able to decorate their own minecraft interior using all the blocks that are currently available in the controller, they can stretch the blocks, and they can move the blocks in an X, Y, and Z axis. 
 
 ## Screenshot of the project
 ![Project](https://user-images.githubusercontent.com/81474281/146399601-16202a2b-c418-465e-8fd1-5101980bfeb5.png)
@@ -50,4 +50,6 @@ We also use interactive animation using keyboard, there are :
 
 ## example of what can be done with the blocks
 
-insert image here
+![image](https://user-images.githubusercontent.com/81474281/146404774-412d9ac8-2a72-43a9-a81b-ae00fc067d4f.png)
+
+In this we added an extra bookshelf in the room and a barrel that floats in the air, the barrel is slightly stretched to the side.
