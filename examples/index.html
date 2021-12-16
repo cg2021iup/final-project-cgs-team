@@ -53,8 +53,8 @@
 			let transformControl;
 
 			const params = {
-				addPoint: addPoint,
-				removePoint: removePoint,
+				addCube: addCube,
+				removeCube: removeCube,
 				addWoodenPlank: addWoodenPlank,
 				addWoodenLog: addWoodenLog,
 				addGlass: addGlass,
@@ -118,8 +118,8 @@
 
 				const gui = new GUI();
 
-				gui.add( params, 'addPoint' );
-				gui.add( params, 'removePoint' );
+				gui.add( params, 'addCube' );
+				gui.add( params, 'removeCube' );
 				gui.add( params, 'addWoodenPlank');
 				gui.add( params, 'addWoodenLog');
 				gui.add( params, 'addGlass');
@@ -1282,7 +1282,7 @@
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-			function addPoint() {
+			function addCube() {
 				splinePointsLength ++;
 				const material = new THREE.MeshLambertMaterial( { color: Math.random() * 0xffffff } );
 				const object = new THREE.Mesh( geometry, material );
@@ -1591,7 +1591,7 @@
 				render();
 			}
 
-			function removePoint() {
+			function removeCube() {
 
 				if ( splinePointsLength <= 4 ) {
 
