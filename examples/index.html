@@ -256,9 +256,9 @@
 				return new THREE.MeshLambertMaterial({map: chestLoader.load(pic)});
 			  	} );
 				const chest = new THREE.Mesh( chestGeometry, chestTexture );
-				chest.position.x = 100;
+				chest.position.x = -100;
 				chest.position.y = 100;
-				chest.position.z = 100;
+				chest.position.z = -200;
 				chest.castShadow = true;
 				chest.receiveShadow = true;
 				scene.add( chest );
