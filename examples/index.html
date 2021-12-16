@@ -344,12 +344,12 @@
 
 				var cartographyTableLoader = new THREE.TextureLoader();
 				var cartographyTableTexture = [
-				'textures/cartographyTableFront.png',	//front
-				'textures/cartographyTableSide.png',	//right
-				'textures/cartographyTableTop.png',		//top
-				'textures/cartographyTableSide.png',	//bottom
-				'textures/cartographyTableLeft.png',	//left
-				'textures/cartographyTableSide.png'		//back
+				'textures/cartographyTableFront.png',		//front
+				'textures/cartographyTableSide.png',		//right
+				'textures/cartographyTableTop.png',			//top
+				'textures/cartographyTableSide.png',		//bottom
+				'textures/cartographyTableLeft.png',		//left
+				'textures/cartographyTableSide.png'			//back
 				].map(pic => {
 				return new THREE.MeshLambertMaterial({map: cartographyTableLoader.load(pic)});
 			  	} );
@@ -361,6 +361,39 @@
 				cartographyTable.receiveShadow = true;
 				scene.add( cartographyTable );
 				splineHelperObjects.push( cartographyTable );
+
+				//barrel
+				const barrelGeometry = new THREE.BoxGeometry( 100, 100, 100 );
+				splinePointsLength ++;
+
+				var barrelLoader = new THREE.TextureLoader();
+				var barrelTexture = [
+				'textures/barrelLeftRight.png',			//front
+				'textures/barrelLeftRight.png',			//back
+				'textures/barrelTopBot.png',			//top
+				'textures/barrelTopBot.png',			//bottom
+				'textures/barrelFront.png',			//left
+				'textures/barrelBack.png'			//right
+				].map(pic => {
+				return new THREE.MeshLambertMaterial({map: barrelLoader.load(pic)});
+			  	} );
+				const barrel = new THREE.Mesh( barrelGeometry, barrelTexture );
+				barrel.position.x = 200;
+				barrel.position.y = 100;
+				barrel.position.z = -400;
+				barrel.castShadow = true;
+				barrel.receiveShadow = true;
+				scene.add( barrel );
+				splineHelperObjects.push( barrel );
+
+				const barrel2 = new THREE.Mesh( barrelGeometry, barrelTexture );
+				barrel2.position.x = 200;
+				barrel2.position.y = 200;
+				barrel2.position.z = -400;
+				barrel2.castShadow = true;
+				barrel2.receiveShadow = true;
+				scene.add( barrel2 );
+				splineHelperObjects.push( barrel2 );
 
 				//woodenLog
 				const woodenLogGeometry = new THREE.BoxGeometry( 100, 100, 100 );
