@@ -48,12 +48,12 @@ We also use interactive animation using keyboard, there are :
 7. 'Y' for Toggle Y
 8. 'Z' for Toggle Z
 
-## example of what can be done with the blocks
+## Example of what can be done with the blocks
 
 ![image](https://user-images.githubusercontent.com/81474281/146404774-412d9ac8-2a72-43a9-a81b-ae00fc067d4f.png)
 
 In this we added an extra bookshelf in the room and a barrel that floats in the air, the barrel is slightly stretched to the side.
 
-Here is the link if you want to go through
+Here is the link if you want to go check the project out.
 
 https://ascaryaaa.itch.io/3d-interior-design-using-minecraft-blocks
