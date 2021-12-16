@@ -284,11 +284,31 @@
 				splineHelperObjects.push( woodenLog );
 				//
 
+				//glass
+				const glassGeometry = new THREE.BoxGeometry( 100, 100, 100 );
+				splinePointsLength ++;
+				const glassTexture = new THREE.TextureLoader().load( 'textures/glass.png', render );
+				const glassMaterial = new THREE.MeshLambertMaterial( { map: glassTexture, transparent: true } );
+				
+				//glasses (copy)
+				const glass = new THREE.Mesh( glassGeometry, glassMaterial );
+				glass.position.x = -200;
+				glass.position.y = 200;
+				glass.position.z = -200;
+				glass.castShadow = true;
+				glass.receiveShadow = true;
+				scene.add( glass );
+				splineHelperObjects.push( glass );
+				//
+
 				//woodenplank
 				const woodenPlankGeometry = new THREE.BoxGeometry( 100, 100, 100 );
 				splinePointsLength ++;
 				const woodenPlankTexture = new THREE.TextureLoader().load( 'textures/woodenPlank.png', render );
 				const woodenPlankMaterial = new THREE.MeshLambertMaterial( { map: woodenPlankTexture, transparent: true } );
+				//
+
+				//woodenplank (copy)
 				const woodenPlank = new THREE.Mesh( woodenPlankGeometry, woodenPlankMaterial );
 				woodenPlank.position.x = 100;
 				woodenPlank.position.y = 0;
@@ -297,6 +317,7 @@
 				woodenPlank.receiveShadow = true;
 				scene.add( woodenPlank );
 				splineHelperObjects.push( woodenPlank );
+				//
 
 				splinePointsLength ++;
 				const woodenPlank2 = new THREE.Mesh( woodenPlankGeometry, woodenPlankMaterial );
