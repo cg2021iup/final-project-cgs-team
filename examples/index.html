@@ -139,6 +139,7 @@
 				document.addEventListener( 'pointerdown', onPointerDown );
 				document.addEventListener( 'pointerup', onPointerUp );
 				document.addEventListener( 'pointermove', onPointerMove );
+				document.addEventListener( 'click', onClick );
 
 
 
@@ -1465,6 +1466,67 @@
 				camera.updateProjectionMatrix();
 
 				renderer.setSize( window.innerWidth, window.innerHeight );
+
+				render();
+
+			}
+			function onKeyDown( event ) {
+
+				enableSelection = ( event.keyCode === 16 ) ? true : false;
+
+			}
+
+			function onKeyUp() {
+
+				enableSelection = false;
+
+			}
+
+			function onClick( event ) {
+
+				event.preventDefault();
+
+				if ( enableSelection === true ) {
+
+					const draggableObjects = controls.getObjects();
+					draggableObjects.length = 0;
+
+					mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+					mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+
+					raycaster.setFromCamera( mouse, camera );
+
+					const intersections = raycaster.intersectObjects( objects, true );
+
+					if ( intersections.length > 0 ) {
+
+						const object = intersections[ 0 ].object;
+
+						if ( group.children.includes( object ) === true ) {
+
+							object.material.emissive.set( 0x000000 );
+							scene.attach( object );
+
+						} else {
+
+							object.material.emissive.set( 0xaaaaaa );
+							group.attach( object );
+
+						}
+
+						controls.transformGroup = true;
+						draggableObjects.push( group );
+
+					}
+
+					if ( group.children.length === 0 ) {
+
+						controls.transformGroup = false;
+						draggableObjects.push( ...objects );
+
+					}
+
+				}
 
 				render();
 
