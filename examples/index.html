@@ -372,8 +372,8 @@
 				'textures/barrelBack.png',			//back
 				'textures/barrelSide.png',			//top
 				'textures/barrelSide.png',			//bottom
-				'textures/barrelSide.png',				//left
-				'textures/barrelSide.png'				//right
+				'textures/barrelSide.png',			//left
+				'textures/barrelSide.png'			//right
 				].map(pic => {
 				return new THREE.MeshLambertMaterial({map: barrelLoader.load(pic)});
 			  	} );
@@ -398,6 +398,32 @@
 				splineHelperObjects.push( barrel2 );
 				barrel2.rotateY( - Math.PI / 2 );
 				
+				//loom
+				const loomGeometry = new THREE.BoxGeometry( 100, 100, 100 );
+				splinePointsLength ++;
+
+				var loomLoader = new THREE.TextureLoader();
+				var loomTexture = [
+				'textures/loomFront.png',			//front
+				'textures/loomSide.png',			//back
+				'textures/loomTop.png',				//top
+				'textures/loomBottom.png',			//bottom
+				'textures/loomSide.png',			//left
+				'textures/loomSide.png'				//right
+				].map(pic => {
+				return new THREE.MeshLambertMaterial({map: loomLoader.load(pic)});
+			  	} );
+				
+				const loom = new THREE.Mesh( loomGeometry, loomTexture );
+				loom.position.x = 100;
+				loom.position.y = 100;
+				loom.position.z = -400;
+				loom.castShadow = true;
+				loom.receiveShadow = true;
+				scene.add( loom );
+				splineHelperObjects.push( loom );
+				loom.rotateY( - Math.PI / 2 );
+
 				//woodenLog
 				const woodenLogGeometry = new THREE.BoxGeometry( 100, 100, 100 );
 				splinePointsLength ++;
