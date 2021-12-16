@@ -522,7 +522,7 @@
 				//Wall (Wooden Plank)
 				splinePointsLength ++;
 				const woodenPlank22 = new THREE.Mesh( woodenPlankGeometry, woodenPlankMaterial );
-				woodenPlank22.position.x = 300;
+				woodenPlank22.position.x = -200;
 				woodenPlank22.position.y = 100;
 				woodenPlank22.position.z = -100;
 				woodenPlank22.castShadow = true;
@@ -532,7 +532,7 @@
 
 				splinePointsLength ++;
 				const woodenPlank23 = new THREE.Mesh( woodenPlankGeometry, woodenPlankMaterial );
-				woodenPlank23.position.x = 300;
+				woodenPlank23.position.x = -200;
 				woodenPlank23.position.y = 100;
 				woodenPlank23.position.z = -200;
 				woodenPlank23.castShadow = true;
@@ -542,7 +542,7 @@
 
 				splinePointsLength ++;
 				const woodenPlank24 = new THREE.Mesh( woodenPlankGeometry, woodenPlankMaterial );
-				woodenPlank24.position.x = 300;
+				woodenPlank24.position.x = -200;
 				woodenPlank24.position.y = 100;
 				woodenPlank24.position.z = -300;
 				woodenPlank24.castShadow = true;
@@ -552,13 +552,23 @@
 
 				plinePointsLength ++;
 				const woodenPlank25 = new THREE.Mesh( woodenPlankGeometry, woodenPlankMaterial );
-				woodenPlank25.position.x = 300;
+				woodenPlank25.position.x = -200;
 				woodenPlank25.position.y = 100;
 				woodenPlank25.position.z = -400;
 				woodenPlank25.castShadow = true;
 				woodenPlank25.receiveShadow = true;
 				scene.add( woodenPlank25 );
 				splineHelperObjects.push( woodenPlank25 );
+
+				plinePointsLength ++;
+				const woodenPlank26 = new THREE.Mesh( woodenPlankGeometry, woodenPlankMaterial );
+				woodenPlank26.position.x = -200;
+				woodenPlank26.position.y = 200;
+				woodenPlank26.position.z = -100;
+				woodenPlank26.castShadow = true;
+				woodenPlank26.receiveShadow = true;
+				scene.add( woodenPlank26 );
+				splineHelperObjects.push( woodenPlank26 );
 
 				render();
 
