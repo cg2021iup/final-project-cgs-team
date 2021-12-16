@@ -36,7 +36,7 @@
 
 			let container;
 			let camera, scene, renderer;
-			const splineHelperObjects = [];
+			const HelperObjects = [];
 			let splinePointsLength = 0;
 			const positions = [];
 			const point = new THREE.Vector3();
@@ -251,7 +251,7 @@
 				chest.castShadow = true;
 				chest.receiveShadow = true;
 				scene.add( chest );
-				splineHelperObjects.push( chest );
+				HelperObjects.push( chest );
 
 				//grass
 				const grassGeometry = new THREE.BoxGeometry( 100, 100, 100 );
@@ -276,7 +276,7 @@
 				grass.castShadow = true;
 				grass.receiveShadow = true;
 				scene.add( grass );
-				splineHelperObjects.push( grass );
+				//HelperObjects.push( grass );
 
 				const grass2 = new THREE.Mesh( grassGeometry, grassTexture );
 				grass2.position.x = 0;
@@ -285,7 +285,7 @@
 				grass2.castShadow = true;
 				grass2.receiveShadow = true;
 				scene.add( grass2 );
-				splineHelperObjects.push( grass2 );
+				//HelperObjects.push( grass2 );
 
 				const grass3 = new THREE.Mesh( grassGeometry, grassTexture );
 				grass3.position.x = 100;
@@ -294,7 +294,7 @@
 				grass3.castShadow = true;
 				grass3.receiveShadow = true;
 				scene.add( grass3 );
-				splineHelperObjects.push( grass3 );
+				//HelperObjects.push( grass3 );
 
 				const grass4 = new THREE.Mesh( grassGeometry, grassTexture );
 				grass4.position.x = 200;
@@ -303,7 +303,7 @@
 				grass4.castShadow = true;
 				grass4.receiveShadow = true;
 				scene.add( grass4 );
-				splineHelperObjects.push( grass4 );
+				//HelperObjects.push( grass4 );
 
 				const grass5 = new THREE.Mesh( grassGeometry, grassTexture );
 				grass5.position.x = 300;
@@ -312,7 +312,7 @@
 				grass5.castShadow = true;
 				grass5.receiveShadow = true;
 				scene.add( grass5 );
-				splineHelperObjects.push( grass5 );
+				//HelperObjects.push( grass5 );
 
 				const grass6 = new THREE.Mesh( grassGeometry, grassTexture );
 				grass6.position.x = -200;
@@ -321,7 +321,7 @@
 				grass6.castShadow = true;
 				grass6.receiveShadow = true;
 				scene.add( grass6 );
-				splineHelperObjects.push( grass6 );
+				//HelperObjects.push( grass6 );
 
 				const grass7 = new THREE.Mesh( grassGeometry, grassTexture );
 				grass7.position.x = -200;
@@ -330,7 +330,7 @@
 				grass7.castShadow = true;
 				grass7.receiveShadow = true;
 				scene.add( grass7 );
-				splineHelperObjects.push( grass7 );
+				//HelperObjects.push( grass7 );
 
 				const grass8 = new THREE.Mesh( grassGeometry, grassTexture );
 				grass8.position.x = -100;
@@ -339,7 +339,7 @@
 				grass8.castShadow = true;
 				grass8.receiveShadow = true;
 				scene.add( grass8 );
-				splineHelperObjects.push( grass8 );
+				//HelperObjects.push( grass8 );
 
 				const grass9 = new THREE.Mesh( grassGeometry, grassTexture );
 				grass9.position.x = 0;
@@ -348,7 +348,7 @@
 				grass9.castShadow = true;
 				grass9.receiveShadow = true;
 				scene.add( grass9 );
-				splineHelperObjects.push( grass9 );
+				//HelperObjects.push( grass9 );
 
 				const grass10 = new THREE.Mesh( grassGeometry, grassTexture );
 				grass10.position.x = 100;
@@ -357,7 +357,7 @@
 				grass10.castShadow = true;
 				grass10.receiveShadow = true;
 				scene.add( grass10 );
-				splineHelperObjects.push( grass10 );
+				//HelperObjects.push( grass10 );
 
 				const grass11 = new THREE.Mesh( grassGeometry, grassTexture );
 				grass11.position.x = 200;
@@ -366,7 +366,7 @@
 				grass11.castShadow = true;
 				grass11.receiveShadow = true;
 				scene.add( grass11 );
-				splineHelperObjects.push( grass11 );
+				//HelperObjects.push( grass11 );
 
 				const grass12 = new THREE.Mesh( grassGeometry, grassTexture );
 				grass12.position.x = 300;
@@ -375,7 +375,7 @@
 				grass12.castShadow = true;
 				grass12.receiveShadow = true;
 				scene.add( grass12 );
-				splineHelperObjects.push( grass12 );
+				//HelperObjects.push( grass12 );
 
 				//bookshelf
 				const bookshelfGeometry = new THREE.BoxGeometry( 100, 100, 100 );
@@ -399,7 +399,7 @@
 				bookshelf.castShadow = true;
 				bookshelf.receiveShadow = true;
 				scene.add( bookshelf );
-				splineHelperObjects.push( bookshelf );
+				HelperObjects.push( bookshelf );
 
 				//furnace
 				const furnaceGeometry = new THREE.BoxGeometry( 100, 100, 100 );
@@ -423,7 +423,7 @@
 				furnace.castShadow = true;
 				furnace.receiveShadow = true;
 				scene.add( furnace );
-				splineHelperObjects.push( furnace );
+				HelperObjects.push( furnace );
 
 				//craftingtable
 				const craftingTableGeometry = new THREE.BoxGeometry( 100, 100, 100 );
@@ -449,7 +449,7 @@
 				craftingTable.castShadow = true;
 				craftingTable.receiveShadow = true;
 				scene.add( craftingTable );
-				splineHelperObjects.push( craftingTable );
+				HelperObjects.push( craftingTable );
 				
 				//cartographyTable
 				const cartographyTableGeometry = new THREE.BoxGeometry( 100, 100, 100 );
@@ -473,7 +473,7 @@
 				cartographyTable.castShadow = true;
 				cartographyTable.receiveShadow = true;
 				scene.add( cartographyTable );
-				splineHelperObjects.push( cartographyTable );
+				HelperObjects.push( cartographyTable );
 
 				//barrel
 				const barrelGeometry = new THREE.BoxGeometry( 100, 100, 100 );
@@ -498,7 +498,7 @@
 				barrel.castShadow = true;
 				barrel.receiveShadow = true;
 				scene.add( barrel );
-				splineHelperObjects.push( barrel );
+				HelperObjects.push( barrel );
 				barrel.rotateY( - Math.PI / 2 );
 
 				const barrel2 = new THREE.Mesh( barrelGeometry, barrelTexture );
@@ -508,7 +508,7 @@
 				barrel2.castShadow = true;
 				barrel2.receiveShadow = true;
 				scene.add( barrel2 );
-				splineHelperObjects.push( barrel2 );
+				HelperObjects.push( barrel2 );
 				barrel2.rotateY( - Math.PI / 2 );
 				
 				//loom
@@ -534,7 +534,7 @@
 				loom.castShadow = true;
 				loom.receiveShadow = true;
 				scene.add( loom );
-				splineHelperObjects.push( loom );
+				HelperObjects.push( loom );
 				loom.rotateY( - Math.PI / 2 );
 
 				//woodenLog
@@ -1277,7 +1277,7 @@
 				woodenPlank46.castShadow = true;
 				woodenPlank46.receiveShadow = true;
 				scene.add( woodenPlank46 );
-				splineHelperObjects.push( woodenPlank46 );
+				HelperObjects.push( woodenPlank46 );
 
 				render();
 
@@ -1304,7 +1304,7 @@
 				object.castShadow = true;
 				object.receiveShadow = true;
 				scene.add( object );
-				splineHelperObjects.push( object );
+				HelperObjects.push( object );
 				render();
 
 			}
@@ -1325,7 +1325,7 @@
 				woodenPlank.castShadow = true;
 				woodenPlank.receiveShadow = true;
 				scene.add( woodenPlank );
-				splineHelperObjects.push( woodenPlank );
+				HelperObjects.push( woodenPlank );
 
 				render();
 
@@ -1357,7 +1357,7 @@
 				woodenLog.castShadow = true;
 				woodenLog.receiveShadow = true;
 				scene.add( woodenLog );
-				splineHelperObjects.push( woodenLog );
+				HelperObjects.push( woodenLog );
 
 				render();
 
@@ -1377,7 +1377,7 @@
 				glass.castShadow = true;
 				glass.receiveShadow = true;
 				scene.add( glass );
-				splineHelperObjects.push( glass );
+				HelperObjects.push( glass );
 
 				render();
 
@@ -1407,7 +1407,7 @@
 				craftingTable.castShadow = true;
 				craftingTable.receiveShadow = true;
 				scene.add( craftingTable );
-				splineHelperObjects.push( craftingTable );
+				HelperObjects.push( craftingTable );
 
 				render();
 			}
@@ -1448,7 +1448,7 @@
 				chest.castShadow = true;
 				chest.receiveShadow = true;
 				scene.add( chest );
-				splineHelperObjects.push( chest );
+				HelperObjects.push( chest );
 				render();
 			}
 
@@ -1476,7 +1476,7 @@
 				bookshelf.castShadow = true;
 				bookshelf.receiveShadow = true;
 				scene.add( bookshelf );
-				splineHelperObjects.push( bookshelf );
+				HelperObjects.push( bookshelf );
 				
 				render();
 			}
@@ -1505,7 +1505,7 @@
 				furnace.castShadow = true;
 				furnace.receiveShadow = true;
 				scene.add( furnace );
-				splineHelperObjects.push( furnace );
+				HelperObjects.push( furnace );
 
 
 				
@@ -1536,7 +1536,7 @@
 				cartographyTable.castShadow = true;
 				cartographyTable.receiveShadow = true;
 				scene.add( cartographyTable );
-				splineHelperObjects.push( cartographyTable );
+				HelperObjects.push( cartographyTable );
 				
 				render();
 			}
@@ -1566,7 +1566,7 @@
 				barrel.castShadow = true;
 				barrel.receiveShadow = true;
 				scene.add( barrel );
-				splineHelperObjects.push( barrel );
+				HelperObjects.push( barrel );
 
 				render();
 			}
@@ -1595,7 +1595,7 @@
 				loom.castShadow = true;
 				loom.receiveShadow = true;
 				scene.add( loom );
-				splineHelperObjects.push( loom );
+				HelperObjects.push( loom );
 				loom.rotateY( - Math.PI / 2 );
 
 				render();
@@ -1624,7 +1624,7 @@
 				grass.castShadow = true;
 				grass.receiveShadow = true;
 				scene.add( grass );
-				splineHelperObjects.push( grass );
+				HelperObjects.push( grass );
 				render();
 			}
 
@@ -1636,7 +1636,7 @@
 
 				}
 
-				const point = splineHelperObjects.pop();
+				const point = HelperObjects.pop();
 				splinePointsLength --;
 
 				positions.pop();
@@ -1677,7 +1677,7 @@
 
 				raycaster.setFromCamera( pointer, camera );
 
-				const intersects = raycaster.intersectObjects( splineHelperObjects, false );
+				const intersects = raycaster.intersectObjects( HelperObjects, false );
 
 				if ( intersects.length > 0 ) {
 
