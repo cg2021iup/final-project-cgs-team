@@ -65,6 +65,7 @@
 				addCartographyTable: addCartographyTable, 
 				addBarrel: addBarrel,
 				addLoom: addLoom,
+				addGrass: addGrass,
 			};
 
 			init();
@@ -75,14 +76,14 @@
 				scene = new THREE.Scene();
 				scene.background = new THREE.Color( 0xf0f0f0 );
 
-				camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 1, 10000 );
-				camera.position.set( 0, 250, 1000 );
+				camera = new THREE.PerspectiveCamera( 90, window.innerWidth / window.innerHeight, 1, 10000 );
+				camera.position.set( 400, 600, 400 );
 				scene.add( camera );
 
 				//light
 				scene.add( new THREE.AmbientLight( 0xf0f0f0 ) );
 				const light = new THREE.SpotLight( 0xffffff, 1.5 );
-				light.position.set( -600, 1000, 200 );
+				light.position.set( -600, 1000, -50 );
 				light.angle = Math.PI * 0.2;
 				light.castShadow = true;
 				light.shadow.camera.near = 200;
@@ -130,6 +131,7 @@
 				gui.add( params, 'addCartographyTable');
 				gui.add( params, 'addBarrel');
 				gui.add( params, 'addLoom');
+				gui.add( params, 'addGrass');
 				gui.open();
 
 				// Controls
@@ -253,6 +255,130 @@
 				chest.receiveShadow = true;
 				scene.add( chest );
 				splineHelperObjects.push( chest );
+
+				//grass
+				const grassGeometry = new THREE.BoxGeometry( 100, 100, 100 );
+				splinePointsLength ++;
+
+				var grassLoader = new THREE.TextureLoader();
+				var grassTexture = [
+				'textures/grassSide.png',
+				'textures/grassSide.png',
+				'textures/grassTop.jpg',
+				'textures/grassTop.png',
+				'textures/grassSide.png',
+				'textures/grassSide.png'
+				].map(pic => {
+				return new THREE.MeshLambertMaterial({map: grassLoader.load(pic)});
+			  	} );
+
+				const grass = new THREE.Mesh( grassGeometry, grassTexture );
+				grass.position.x = -100;
+				grass.position.y = 0;
+				grass.position.z = 100;
+				grass.castShadow = true;
+				grass.receiveShadow = true;
+				scene.add( grass );
+				splineHelperObjects.push( grass );
+
+				const grass2 = new THREE.Mesh( grassGeometry, grassTexture );
+				grass2.position.x = 0;
+				grass2.position.y = 0;
+				grass2.position.z = 100;
+				grass2.castShadow = true;
+				grass2.receiveShadow = true;
+				scene.add( grass2 );
+				splineHelperObjects.push( grass2 );
+
+				const grass3 = new THREE.Mesh( grassGeometry, grassTexture );
+				grass3.position.x = 100;
+				grass3.position.y = 0;
+				grass3.position.z = 100;
+				grass3.castShadow = true;
+				grass3.receiveShadow = true;
+				scene.add( grass3 );
+				splineHelperObjects.push( grass3 );
+
+				const grass4 = new THREE.Mesh( grassGeometry, grassTexture );
+				grass4.position.x = 200;
+				grass4.position.y = 0;
+				grass4.position.z = 100;
+				grass4.castShadow = true;
+				grass4.receiveShadow = true;
+				scene.add( grass4 );
+				splineHelperObjects.push( grass4 );
+
+				const grass5 = new THREE.Mesh( grassGeometry, grassTexture );
+				grass5.position.x = 300;
+				grass5.position.y = 0;
+				grass5.position.z = 100;
+				grass5.castShadow = true;
+				grass5.receiveShadow = true;
+				scene.add( grass5 );
+				splineHelperObjects.push( grass5 );
+
+				const grass6 = new THREE.Mesh( grassGeometry, grassTexture );
+				grass6.position.x = -200;
+				grass6.position.y = 0;
+				grass6.position.z = 100;
+				grass6.castShadow = true;
+				grass6.receiveShadow = true;
+				scene.add( grass6 );
+				splineHelperObjects.push( grass6 );
+
+				const grass7 = new THREE.Mesh( grassGeometry, grassTexture );
+				grass7.position.x = -200;
+				grass7.position.y = 0;
+				grass7.position.z = 200;
+				grass7.castShadow = true;
+				grass7.receiveShadow = true;
+				scene.add( grass7 );
+				splineHelperObjects.push( grass7 );
+
+				const grass8 = new THREE.Mesh( grassGeometry, grassTexture );
+				grass8.position.x = -100;
+				grass8.position.y = 0;
+				grass8.position.z = 200;
+				grass8.castShadow = true;
+				grass8.receiveShadow = true;
+				scene.add( grass8 );
+				splineHelperObjects.push( grass8 );
+
+				const grass9 = new THREE.Mesh( grassGeometry, grassTexture );
+				grass9.position.x = 0;
+				grass9.position.y = 0;
+				grass9.position.z = 200;
+				grass9.castShadow = true;
+				grass9.receiveShadow = true;
+				scene.add( grass9 );
+				splineHelperObjects.push( grass9 );
+
+				const grass10 = new THREE.Mesh( grassGeometry, grassTexture );
+				grass10.position.x = 100;
+				grass10.position.y = 0;
+				grass10.position.z = 200;
+				grass10.castShadow = true;
+				grass10.receiveShadow = true;
+				scene.add( grass10 );
+				splineHelperObjects.push( grass10 );
+
+				const grass11 = new THREE.Mesh( grassGeometry, grassTexture );
+				grass11.position.x = 200;
+				grass11.position.y = 0;
+				grass11.position.z = 200;
+				grass11.castShadow = true;
+				grass11.receiveShadow = true;
+				scene.add( grass11 );
+				splineHelperObjects.push( grass11 );
+
+				const grass12 = new THREE.Mesh( grassGeometry, grassTexture );
+				grass12.position.x = 300;
+				grass12.position.y = 0;
+				grass12.position.z = 200;
+				grass12.castShadow = true;
+				grass12.receiveShadow = true;
+				scene.add( grass12 );
+				splineHelperObjects.push( grass12 );
 
 				//bookshelf
 				const bookshelfGeometry = new THREE.BoxGeometry( 100, 100, 100 );
@@ -1475,6 +1601,33 @@
 				splineHelperObjects.push( loom );
 				loom.rotateY( - Math.PI / 2 );
 
+				render();
+			}
+
+			function addGrass() {
+				const grassGeometry = new THREE.BoxGeometry( 100, 100, 100 );
+				splinePointsLength ++;
+
+				var grassLoader = new THREE.TextureLoader();
+				var grassTexture = [
+				'textures/grassSide.png',
+				'textures/grassSide.png',
+				'textures/grassTop.jpg',
+				'textures/grassTop.png',
+				'textures/grassSide.png',
+				'textures/grassSide.png'
+				].map(pic => {
+				return new THREE.MeshLambertMaterial({map: grassLoader.load(pic)});
+			  	} );
+
+				const grass = new THREE.Mesh( grassGeometry, grassTexture );
+				grass.position.x = Math.random() * 1000 - 500;
+				grass.position.y = Math.random() * 600;
+				grass.position.z = Math.random() * 800 - 400;
+				grass.castShadow = true;
+				grass.receiveShadow = true;
+				scene.add( grass );
+				splineHelperObjects.push( grass );
 				render();
 			}
 
