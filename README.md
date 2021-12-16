@@ -38,6 +38,15 @@ We have 13 controllers in our program, there are :
 12. addLoom
 13. addGrass
 
+We also use interactive animation using keyboard, there are :
+1. 'W' for Translate
+2. 'E' for rotate
+3. 'R' for scale
+4. '+/-' for adjust size
+5. 'Shift' for snip to grid
+6. 'X' for Toggle X
+7. 'Y' for Toggle Y
+8. 'Z' for Toggle Z
 
 ## example of what can be done with the blocks
 
