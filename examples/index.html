@@ -236,7 +236,7 @@
 				const chestGeometry = new THREE.BoxGeometry( 100, 100, 100 );
 				splinePointsLength ++;
 
-				var loader = new THREE.TextureLoader();
+				var chestLoader = new THREE.TextureLoader();
 				var chestTexture = [
 				'textures/chestFront.png',
 				'textures/chestSide.png',
@@ -245,7 +245,7 @@
 				'textures/chestSide.png',
 				'textures/chestSide.png'
 				].map(pic => {
-				return new THREE.MeshLambertMaterial({map: loader.load(pic)});
+				return new THREE.MeshLambertMaterial({map: chestLoader.load(pic)});
 			  	} );
 				const chest = new THREE.Mesh( chestGeometry, chestTexture );
 				chest.position.x = 100;
@@ -256,6 +256,34 @@
 				scene.add( chest );
 				splineHelperObjects.push( chest );
 
+				//woodenLog
+				const woodenLogGeometry = new THREE.BoxGeometry( 100, 100, 100 );
+				splinePointsLength ++;
+
+				var woodenLogLoader = new THREE.TextureLoader();
+				var woodenLogTexture = [
+				'textures/woodenLogSide.png',
+				'textures/woodenLogSide.png',
+				'textures/woodenLogTopBot.png',
+				'textures/woodenLogTopBot.png',
+				'textures/woodenLogSide.png',
+				'textures/woodenLogSide.png'
+				].map(pic => {
+				return new THREE.MeshLambertMaterial({map: woodenLogLoader.load(pic)});
+			  	} );
+				//
+				
+				//woodenLogs (copy)
+				const woodenLog = new THREE.Mesh( woodenLogGeometry, woodenLogTexture );
+				woodenLog.position.x = -200;
+				woodenLog.position.y = 0;
+				woodenLog.position.z = 0;
+				woodenLog.castShadow = true;
+				woodenLog.receiveShadow = true;
+				scene.add( woodenLog );
+				splineHelperObjects.push( woodenLog );
+				//
+
 				//woodenplank
 				const woodenPlankGeometry = new THREE.BoxGeometry( 100, 100, 100 );
 				splinePointsLength ++;
@@ -264,7 +292,7 @@
 				const woodenPlank = new THREE.Mesh( woodenPlankGeometry, woodenPlankMaterial );
 				woodenPlank.position.x = 100;
 				woodenPlank.position.y = 0;
-				woodenPlank.position.z = 100;
+				woodenPlank.position.z = -400;
 				woodenPlank.castShadow = true;
 				woodenPlank.receiveShadow = true;
 				scene.add( woodenPlank );
@@ -274,22 +302,212 @@
 				const woodenPlank2 = new THREE.Mesh( woodenPlankGeometry, woodenPlankMaterial );
 				woodenPlank2.position.x = 200;
 				woodenPlank2.position.y = 0;
-				woodenPlank2.position.z = 100;
+				woodenPlank2.position.z = -400;
 				woodenPlank2.castShadow = true;
 				woodenPlank2.receiveShadow = true;
 				scene.add( woodenPlank2 );
 				splineHelperObjects.push( woodenPlank2 );
-
+/*
 				splinePointsLength ++;
 				const woodenPlank3 = new THREE.Mesh( woodenPlankGeometry, woodenPlankMaterial );
 				woodenPlank3.position.x = 300;
 				woodenPlank3.position.y = 0;
-				woodenPlank3.position.z = 100;
+				woodenPlank3.position.z = -400;
 				woodenPlank3.castShadow = true;
 				woodenPlank3.receiveShadow = true;
 				scene.add( woodenPlank3 );
 				splineHelperObjects.push( woodenPlank3 );
+*/
+				splinePointsLength ++;
+				const woodenPlank4 = new THREE.Mesh( woodenPlankGeometry, woodenPlankMaterial );
+				woodenPlank4.position.x = 200;
+				woodenPlank4.position.y = 0;
+				woodenPlank4.position.z = -400;
+				woodenPlank4.castShadow = true;
+				woodenPlank4.receiveShadow = true;
+				scene.add( woodenPlank4 );
+				splineHelperObjects.push( woodenPlank4 );
 
+				splinePointsLength ++;
+				const woodenPlank5 = new THREE.Mesh( woodenPlankGeometry, woodenPlankMaterial );
+				woodenPlank5.position.x = 100;
+				woodenPlank5.position.y = 0;
+				woodenPlank5.position.z = -400;
+				woodenPlank5.castShadow = true;
+				woodenPlank5.receiveShadow = true;
+				scene.add( woodenPlank5 );
+				splineHelperObjects.push( woodenPlank5 );
+
+				splinePointsLength ++;
+				const woodenPlank6 = new THREE.Mesh( woodenPlankGeometry, woodenPlankMaterial );
+				woodenPlank6.position.x = 0;
+				woodenPlank6.position.y = 0;
+				woodenPlank6.position.z = -400;
+				woodenPlank6.castShadow = true;
+				woodenPlank6.receiveShadow = true;
+				scene.add( woodenPlank6 );
+				splineHelperObjects.push( woodenPlank6 );
+
+				splinePointsLength ++;
+				const woodenPlank7 = new THREE.Mesh( woodenPlankGeometry, woodenPlankMaterial );
+				woodenPlank7.position.x = -100;
+				woodenPlank7.position.y = 0;
+				woodenPlank7.position.z = -400;
+				woodenPlank7.castShadow = true;
+				woodenPlank7.receiveShadow = true;
+				scene.add( woodenPlank7 );
+				splineHelperObjects.push( woodenPlank7 );
+
+				splinePointsLength ++;
+				const woodenPlank8 = new THREE.Mesh( woodenPlankGeometry, woodenPlankMaterial );
+				woodenPlank8.position.x = -100;
+				woodenPlank8.position.y = 0;
+				woodenPlank8.position.z = -300;
+				woodenPlank8.castShadow = true;
+				woodenPlank8.receiveShadow = true;
+				scene.add( woodenPlank8 );
+				splineHelperObjects.push( woodenPlank8 );
+
+				splinePointsLength ++;
+				const woodenPlank9 = new THREE.Mesh( woodenPlankGeometry, woodenPlankMaterial );
+				woodenPlank9.position.x = 0;
+				woodenPlank9.position.y = 0;
+				woodenPlank9.position.z = -300;
+				woodenPlank9.castShadow = true;
+				woodenPlank9.receiveShadow = true;
+				scene.add( woodenPlank9 );
+				splineHelperObjects.push( woodenPlank9 );
+
+				splinePointsLength ++;
+				const woodenPlank10 = new THREE.Mesh( woodenPlankGeometry, woodenPlankMaterial );
+				woodenPlank10.position.x = 100;
+				woodenPlank10.position.y = 0;
+				woodenPlank10.position.z = -300;
+				woodenPlank10.castShadow = true;
+				woodenPlank10.receiveShadow = true;
+				scene.add( woodenPlank10 );
+				splineHelperObjects.push( woodenPlank10 );
+
+				splinePointsLength ++;
+				const woodenPlank11 = new THREE.Mesh( woodenPlankGeometry, woodenPlankMaterial );
+				woodenPlank11.position.x = 200;
+				woodenPlank11.position.y = 0;
+				woodenPlank11.position.z = -300;
+				woodenPlank11.castShadow = true;
+				woodenPlank11.receiveShadow = true;
+				scene.add( woodenPlank11 );
+				splineHelperObjects.push( woodenPlank11 );
+/*
+				splinePointsLength ++;
+				const woodenPlank12 = new THREE.Mesh( woodenPlankGeometry, woodenPlankMaterial );
+				woodenPlank12.position.x = 300;
+				woodenPlank12.position.y = 0;
+				woodenPlank12.position.z = -300;
+				woodenPlank12.castShadow = true;
+				woodenPlank12.receiveShadow = true;
+				scene.add( woodenPlank12 );
+				splineHelperObjects.push( woodenPlank12 );
+
+				splinePointsLength ++;
+				const woodenPlank13 = new THREE.Mesh( woodenPlankGeometry, woodenPlankMaterial );
+				woodenPlank13.position.x = 300;
+				woodenPlank13.position.y = 0;
+				woodenPlank13.position.z = -200;
+				woodenPlank13.castShadow = true;
+				woodenPlank13.receiveShadow = true;
+				scene.add( woodenPlank13 );
+				splineHelperObjects.push( woodenPlank13 );
+*/
+				splinePointsLength ++;
+				const woodenPlank14 = new THREE.Mesh( woodenPlankGeometry, woodenPlankMaterial );
+				woodenPlank14.position.x = 200;
+				woodenPlank14.position.y = 0;
+				woodenPlank14.position.z = -200;
+				woodenPlank14.castShadow = true;
+				woodenPlank14.receiveShadow = true;
+				scene.add( woodenPlank14 );
+				splineHelperObjects.push( woodenPlank14 );
+
+				splinePointsLength ++;
+				const woodenPlank15 = new THREE.Mesh( woodenPlankGeometry, woodenPlankMaterial );
+				woodenPlank15.position.x = 100;
+				woodenPlank15.position.y = 0;
+				woodenPlank15.position.z = -200;
+				woodenPlank15.castShadow = true;
+				woodenPlank15.receiveShadow = true;
+				scene.add( woodenPlank15 );
+				splineHelperObjects.push( woodenPlank15 );
+
+				splinePointsLength ++;
+				const woodenPlank16 = new THREE.Mesh( woodenPlankGeometry, woodenPlankMaterial );
+				woodenPlank16.position.x = 0;
+				woodenPlank16.position.y = 0;
+				woodenPlank16.position.z = -200;
+				woodenPlank16.castShadow = true;
+				woodenPlank16.receiveShadow = true;
+				scene.add( woodenPlank16 );
+				splineHelperObjects.push( woodenPlank16 );
+
+				splinePointsLength ++;
+				const woodenPlank17 = new THREE.Mesh( woodenPlankGeometry, woodenPlankMaterial );
+				woodenPlank17.position.x = -100;
+				woodenPlank17.position.y = 0;
+				woodenPlank17.position.z = -200;
+				woodenPlank17.castShadow = true;
+				woodenPlank17.receiveShadow = true;
+				scene.add( woodenPlank17 );
+				splineHelperObjects.push( woodenPlank17 );
+
+				splinePointsLength ++;
+				const woodenPlank18 = new THREE.Mesh( woodenPlankGeometry, woodenPlankMaterial );
+				woodenPlank18.position.x = -100;
+				woodenPlank18.position.y = 0;
+				woodenPlank18.position.z = -100;
+				woodenPlank18.castShadow = true;
+				woodenPlank18.receiveShadow = true;
+				scene.add( woodenPlank18 );
+				splineHelperObjects.push( woodenPlank18 );
+
+				splinePointsLength ++;
+				const woodenPlank19 = new THREE.Mesh( woodenPlankGeometry, woodenPlankMaterial );
+				woodenPlank19.position.x = 0;
+				woodenPlank19.position.y = 0;
+				woodenPlank19.position.z = -100;
+				woodenPlank19.castShadow = true;
+				woodenPlank19.receiveShadow = true;
+				scene.add( woodenPlank19 );
+				splineHelperObjects.push( woodenPlank19 );
+
+				splinePointsLength ++;
+				const woodenPlank20 = new THREE.Mesh( woodenPlankGeometry, woodenPlankMaterial );
+				woodenPlank20.position.x = 100;
+				woodenPlank20.position.y = 0;
+				woodenPlank20.position.z = -100;
+				woodenPlank20.castShadow = true;
+				woodenPlank20.receiveShadow = true;
+				scene.add( woodenPlank20 );
+				splineHelperObjects.push( woodenPlank20 );
+
+				splinePointsLength ++;
+				const woodenPlank21 = new THREE.Mesh( woodenPlankGeometry, woodenPlankMaterial );
+				woodenPlank21.position.x = 200;
+				woodenPlank21.position.y = 0;
+				woodenPlank21.position.z = -100;
+				woodenPlank21.castShadow = true;
+				woodenPlank21.receiveShadow = true;
+				scene.add( woodenPlank21 );
+				splineHelperObjects.push( woodenPlank21 );
+/*
+				splinePointsLength ++;
+				const woodenPlank22 = new THREE.Mesh( woodenPlankGeometry, woodenPlankMaterial );
+				woodenPlank22.position.x = 300;
+				woodenPlank22.position.y = 0;
+				woodenPlank22.position.z = -100;
+				woodenPlank22.castShadow = true;
+				woodenPlank22.receiveShadow = true;
+				scene.add( woodenPlank22 );
+				splineHelperObjects.push( woodenPlank22 );
+*/
 				render();
 
 			}
