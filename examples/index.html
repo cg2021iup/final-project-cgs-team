@@ -271,10 +271,10 @@
 				var craftingTableLoader = new THREE.TextureLoader();
 				var craftingTableTexture = [
 				'textures/craftingTableFrontBack.png',
-				'textures/craftingTableSide.png',
+				'textures/craftingTableFrontBack.png',
 				'textures/craftingTableTop.png',
 				'textures/craftingTableBot.png',
-				'textures/craftingTableFrontBack.png',
+				'textures/craftingTableSide.png',
 				'textures/craftingTableSide.png'
 				].map(pic => {
 				return new THREE.MeshLambertMaterial({map: craftingTableLoader.load(pic)});
@@ -282,9 +282,9 @@
 				  
 				//craftingTable (copy)
 				const craftingTable = new THREE.Mesh( craftingTableGeometry, craftingTableTexture );
-				craftingTable.position.x = 100;
-				craftingTable.position.y = 300;
-				craftingTable.position.z = 100;
+				craftingTable.position.x = -100;
+				craftingTable.position.y = 100;
+				craftingTable.position.z = -300;
 				craftingTable.castShadow = true;
 				craftingTable.receiveShadow = true;
 				scene.add( craftingTable );
