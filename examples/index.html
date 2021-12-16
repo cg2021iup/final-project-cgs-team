@@ -264,6 +264,30 @@
 				scene.add( chest );
 				splineHelperObjects.push( chest );
 
+				//furnace
+				const furnaceGeometry = new THREE.BoxGeometry( 100, 100, 100 );
+				splinePointsLength ++;
+
+				var furnaceLoader = new THREE.TextureLoader();
+				var furnaceTexture = [
+				'textures/furnaceFront.png',
+				'textures/furnaceSide.png',
+				'textures/furnaceTopBot.png',
+				'textures/furnaceTopBot.png',
+				'textures/furnaceSide.png',
+				'textures/furnaceSide.png'
+				].map(pic => {
+				return new THREE.MeshLambertMaterial({map: furnaceLoader.load(pic)});
+			  	} );
+				const furnace = new THREE.Mesh( furnaceGeometry, furnaceTexture );
+				furnace.position.x = -100;
+				furnace.position.y = 100;
+				furnace.position.z = -100;
+				furnace.castShadow = true;
+				furnace.receiveShadow = true;
+				scene.add( furnace );
+				splineHelperObjects.push( furnace );
+
 				//craftingtable
 				const craftingTableGeometry = new THREE.BoxGeometry( 100, 100, 100 );
 				splinePointsLength ++;
