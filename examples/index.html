@@ -299,7 +299,69 @@
 				glass.receiveShadow = true;
 				scene.add( glass );
 				splineHelperObjects.push( glass );
-				//
+				
+				const glass2 = new THREE.Mesh( glassGeometry, glassMaterial );
+				glass2.position.x = -200;
+				glass2.position.y = 200;
+				glass2.position.z = -300;
+				glass2.castShadow = true;
+				glass2.receiveShadow = true;
+				scene.add( glass2 );
+				splineHelperObjects.push( glass2 );
+
+				const glass3 = new THREE.Mesh( glassGeometry, glassMaterial );
+				glass3.position.x = -200;
+				glass3.position.y = 300;
+				glass3.position.z = -200;
+				glass3.castShadow = true;
+				glass3.receiveShadow = true;
+				scene.add( glass3 );
+				splineHelperObjects.push( glass3 );
+		
+				const glass4 = new THREE.Mesh( glassGeometry, glassMaterial );
+				glass4.position.x = -200;
+				glass4.position.y = 300;
+				glass4.position.z = -300;
+				glass4.castShadow = true;
+				glass4.receiveShadow = true;
+				scene.add( glass4 );
+				splineHelperObjects.push( glass4 );
+
+				const glass5 = new THREE.Mesh( glassGeometry, glassMaterial );
+				glass5.position.x = 100;
+				glass5.position.y = 300;
+				glass5.position.z = -500;
+				glass5.castShadow = true;
+				glass5.receiveShadow = true;
+				scene.add( glass5 );
+				splineHelperObjects.push( glass5 );
+
+				const glass6 = new THREE.Mesh( glassGeometry, glassMaterial );
+				glass6.position.x = 100;
+				glass6.position.y = 200;
+				glass6.position.z = -500;
+				glass6.castShadow = true;
+				glass6.receiveShadow = true;
+				scene.add( glass6 );
+				splineHelperObjects.push( glass6 );
+
+				const glass7 = new THREE.Mesh( glassGeometry, glassMaterial );
+				glass7.position.x = 0;
+				glass7.position.y = 300;
+				glass7.position.z = -500;
+				glass7.castShadow = true;
+				glass7.receiveShadow = true;
+				scene.add( glass7 );
+				splineHelperObjects.push( glass7 );
+
+				const glass8 = new THREE.Mesh( glassGeometry, glassMaterial );
+				glass8.position.x = 0;
+				glass8.position.y = 200;
+				glass8.position.z = -500;
+				glass8.castShadow = true;
+				glass8.receiveShadow = true;
+				scene.add( glass8 );
+				splineHelperObjects.push( glass8 );
 
 				//woodenplank
 				const woodenPlankGeometry = new THREE.BoxGeometry( 100, 100, 100 );
