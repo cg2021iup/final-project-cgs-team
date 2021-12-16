@@ -264,6 +264,30 @@
 				scene.add( chest );
 				splineHelperObjects.push( chest );
 
+				//bookshelf
+				const bookshelfGeometry = new THREE.BoxGeometry( 100, 100, 100 );
+				splinePointsLength ++;
+
+				var bookshelfLoader = new THREE.TextureLoader();
+				var bookshelfTexture = [
+				'textures/bookshelfSide.png',
+				'textures/bookshelfSide.png',
+				'textures/bookshelfTopBot.png',
+				'textures/bookshelfTopBot.png',
+				'textures/bookshelfSide.png',
+				'textures/bookshelfSide.png'
+				].map(pic => {
+				return new THREE.MeshLambertMaterial({map: bookshelfLoader.load(pic)});
+			  	} );
+				const bookshelf = new THREE.Mesh( bookshelfGeometry, bookshelfTexture );
+				bookshelf.position.x = -100;
+				bookshelf.position.y = 200;
+				bookshelf.position.z = -400;
+				bookshelf.castShadow = true;
+				bookshelf.receiveShadow = true;
+				scene.add( bookshelf );
+				splineHelperObjects.push( bookshelf );
+
 				//furnace
 				const furnaceGeometry = new THREE.BoxGeometry( 100, 100, 100 );
 				splinePointsLength ++;
@@ -303,7 +327,7 @@
 				].map(pic => {
 				return new THREE.MeshLambertMaterial({map: craftingTableLoader.load(pic)});
 			  	} );
-				  
+				
 				//craftingTable (copy)
 				const craftingTable = new THREE.Mesh( craftingTableGeometry, craftingTableTexture );
 				craftingTable.position.x = -100;
@@ -313,7 +337,6 @@
 				craftingTable.receiveShadow = true;
 				scene.add( craftingTable );
 				splineHelperObjects.push( craftingTable );
-				//
 
 				//woodenLog
 				const woodenLogGeometry = new THREE.BoxGeometry( 100, 100, 100 );
@@ -1161,6 +1184,16 @@
 				woodenPlank45.receiveShadow = true;
 				scene.add( woodenPlank45 );
 				splineHelperObjects.push( woodenPlank45 );
+				
+				splinePointsLength ++;
+				const woodenPlank46 = new THREE.Mesh( woodenPlankGeometry, woodenPlankMaterial );
+				woodenPlank46.position.x = -100;
+				woodenPlank46.position.y = 100;
+				woodenPlank46.position.z = -400;
+				woodenPlank46.castShadow = true;
+				woodenPlank46.receiveShadow = true;
+				scene.add( woodenPlank46 );
+				splineHelperObjects.push( woodenPlank46 );
 
 				render();
 
